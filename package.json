@@ -1,0 +1,25 @@
+{
+  "name": "registries",
+  "version": "0.1.0",
+  "description": "Tool for managing npm registries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkuminecz/registries.git"
+  },
+  "keywords": [
+    "npm",
+    "registry",
+    "registries",
+    "manager"
+  ],
+  "author": "Tim Kuminecz <tkuminecz@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tkuminecz/registries/issues"
+  },
+  "homepage": "https://github.com/tkuminecz/registries#readme"
+}
