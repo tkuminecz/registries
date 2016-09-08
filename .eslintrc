@@ -1,0 +1,6 @@
+{
+  "extends": "proper",
+  "env": {
+    "node": true
+  }
+}

@@ -1,0 +1,11 @@
+{
+	"presets": [ "stage-1" ],
+	"env": {
+		"build": {
+			"presets": [ "es2015-rollup" ]
+		},
+		"development": {
+			"presets": [ "es2015" ]
+		}
+	}
+}

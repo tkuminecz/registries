@@ -2,14 +2,6 @@
   "name": "registries",
   "version": "0.1.0",
   "description": "Tool for managing npm registries",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tkuminecz/registries.git"
-  },
   "keywords": [
     "npm",
     "registry",
@@ -18,8 +10,38 @@
   ],
   "author": "Tim Kuminecz <tkuminecz@gmail.com>",
   "license": "MIT",
+  "homepage": "https://github.com/tkuminecz/registries#readme",
   "bugs": {
     "url": "https://github.com/tkuminecz/registries/issues"
   },
-  "homepage": "https://github.com/tkuminecz/registries#readme"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkuminecz/registries.git"
+  },
+  "scripts": {
+    "build": "BABEL_ENV=build node_modules/.bin/rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "registries": "dist/bin/registries.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-es2015-rollup": "^1.2.0",
+    "babel-preset-stage-1": "^6.13.0",
+    "eslint": "^3.4.0",
+    "eslint-config-proper": "^0.1.3",
+    "rollup": "^0.34.13",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-cli": "^0.1.5"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "chalk": "^1.1.3",
+    "inquirer": "^1.1.3",
+    "jsonfile": "^2.3.1",
+    "lodash": "^4.15.0",
+    "yargs": "^5.0.0"
+  }
 }
