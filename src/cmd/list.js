@@ -1,7 +1,6 @@
 import { bail, getCurrentRegistry, registryMatches } from '../lib';
 import chalk from 'chalk';
 
-
 function getMaxLen(strs) {
 	let max = -Infinity;
 	strs.forEach((str) => {
@@ -13,29 +12,41 @@ function getMaxLen(strs) {
 }
 
 function pad(str, len, char = ' ') {
-	while (str.length < len) {
-		str = str + char;
+	let pad = '';
+	while (str.length + pad.length < len) {
+		pad = pad + char;
 	}
 
-	return str;
+	return pad;
 }
 
 
+
+
+
 export default function(opts, config) {
-	const keys = Object.keys(config).sort();
+	const mergedConfig = Object.assign({}, config.default, config.custom);
+	const keys = Object.keys(mergedConfig).sort();
 	if (keys.length === 0) {
 		bail(chalk.yellow(`No registries found.\n`));
 	}
 
 	return getCurrentRegistry()
 		.then((currentRegistry) => {
-			const nameMaxLen = getMaxLen(keys);
+			const nameMaxLen = getMaxLen(Object.keys(mergedConfig));
 
-			keys.forEach((registryName) => {
-				const registryUrl = config[registryName],
+			Object.keys(config.default).forEach((registryName) => {
+				const registryUrl = mergedConfig[registryName],
 					match = registryMatches(currentRegistry, registryUrl) ? chalk.blue('* ') : '  ';
 
-				process.stdout.write(match + chalk.cyan(pad(registryName, nameMaxLen)) + chalk.dim.white(`  ${ registryUrl }\n`));
+				process.stdout.write(match + chalk.underline.cyan(registryName) + pad(registryName, nameMaxLen) + chalk.dim.white(`   ${ registryUrl }\n`));
+			});
+
+			Object.keys(config.custom).forEach((registryName) => {
+				const registryUrl = mergedConfig[registryName],
+					match = registryMatches(currentRegistry, registryUrl) ? chalk.blue('* ') : '  ';
+
+				process.stdout.write(match + chalk.cyan(registryName) + pad(registryName, nameMaxLen) + chalk.dim.white(`   ${ registryUrl }\n`));
 			});
 		});
 }

@@ -6,16 +6,16 @@ export default function(opts, config) {
 		{
 			type: 'input',
 			name: 'registryName',
-			message: 'Registry name:'
+			message: 'registry name:'
 		},
 		{
 			type: 'input',
 			name: 'registryUrl',
-			message: 'Registry URL:'
+			message: 'registry url:'
 		}
 	])
 	.then(({ registryName, registryUrl }) => {
-		config[registryName] = registryUrl;
+		config.custom[registryName] = registryUrl;
 		return saveConfigFile(config);
 	});
 }

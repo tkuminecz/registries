@@ -1,6 +1,6 @@
 {
   "name": "registries",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "CLI tool for managing npm registries",
   "keywords": [
     "npm",
@@ -20,6 +20,7 @@
   },
   "scripts": {
     "build": "BABEL_ENV=build node_modules/.bin/rollup -c",
+    "build:watch": "node_modules/.bin/nodemon --watch src --exec npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
