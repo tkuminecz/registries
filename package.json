@@ -1,7 +1,7 @@
 {
   "name": "registries",
-  "version": "0.2.0",
-  "description": "Tool for managing npm registries",
+  "version": "0.2.1",
+  "description": "CLI tool for managing npm registries",
   "keywords": [
     "npm",
     "registry",
