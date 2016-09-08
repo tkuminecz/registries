@@ -1,6 +1,6 @@
 {
   "name": "registries",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Tool for managing npm registries",
   "keywords": [
     "npm",
