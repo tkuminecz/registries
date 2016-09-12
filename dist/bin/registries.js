@@ -173,7 +173,7 @@ function initCmd (_ref) {
 
 	var doInit = void 0;
 
-	getConfigFile().catch(function () {
+	return getConfigFile().catch(function () {
 		if (!force) {
 			doInit = inquirer.prompt([{
 				type: 'confirm',

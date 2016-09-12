@@ -5,7 +5,7 @@ import Promise from 'bluebird';
 export default function({ force = true }) {
 	let doInit;
 
-	getConfigFile()
+	return getConfigFile()
 		.catch(() => {
 			if (!force) {
 				doInit = inquirer.prompt([{
