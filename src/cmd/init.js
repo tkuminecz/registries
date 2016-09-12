@@ -6,7 +6,7 @@ export default function({ force = true }) {
 	let doInit;
 
 	return getConfigFile()
-		.then(() => bail('registries already initialized\n'));
+		.then(() => bail('registries already initialized\n'))
 		.catch(() => {
 			if (!force) {
 				doInit = inquirer.prompt([{
