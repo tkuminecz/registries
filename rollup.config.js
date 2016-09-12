@@ -5,5 +5,5 @@ export default {
 	entry: 'src/main.js',
 	format: 'cjs',
 	plugins: [ babel(), cli() ],
-	dest: 'dist/bin/registries.js'
+	dest: 'dist/registries.js'
 }
